@@ -261,10 +261,3 @@ jobs:
             --strategy rolling'
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-          
-      - name: Daemonize our Node API service
-        run: nohup npm run start &
-      - name: Run HawkScan
-        uses: stackhawk/hawkscan-action@v1.3.1
-        with:
-          apiKey: ${{ secrets.HAWK_API_KEY }}
